@@ -1,11 +1,10 @@
 import React from 'react'
+import LoadingIntro from './components/ui/LoadingIntro'
 <link href="/src/styles.css" rel="stylesheet"></link>
 
 const App = () => {
   return (
-    <h1 class="text-3xl font-bold underline">
-    Kartik Turak Portfolio
-  </h1>
+    <LoadingIntro onComplete={() => console.log("Loading complete!")} />  
   )
 }
 
