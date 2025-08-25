@@ -15,8 +15,6 @@ const App = () => {
         <div
           className={`relative min-h-screen transition-opacity duration-700 ${isLoaded ? 'opacity-100' : 'opacity-0'} bg-black text-gray-100`}
         >
-          <div className="absolute inset-0 bg-black/50"></div>
-
         <Home />
         <About />
         <Projects />
