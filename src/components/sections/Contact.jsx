@@ -25,7 +25,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="min-h-screen bg-black text-white p-6 md:p-12">
+    <div className=" bg-black text-white p-6 md:p-12">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
           
@@ -84,7 +84,6 @@ const Contact = () => {
             <div className="mt-16 space-y-2">
               <div className="text-slate-400">Based in Nagpur, Maharashtra, India</div>
               <div className="text-slate-400">Available for freelance opportunities and full-time positions.</div>
-              <div className="text-slate-400">Made with love by Kartik Turak.</div>
             </div>
           </div>
 
