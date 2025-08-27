@@ -1,9 +1,168 @@
-import React from 'react'
+import React, { useState } from 'react';
+import { Mail, Linkedin, Github, Twitter, Send } from 'lucide-react';
 
 const Contact = () => {
-  return (
-    <div>Contact</div>
-  )
-}
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  });
 
-export default Contact
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = () => {
+    console.log('Form submitted:', formData);
+    // Here you would typically send the data to your backend
+    alert('Message sent successfully!');
+    setFormData({ name: '', email: '', subject: '', message: '' });
+  };
+
+  return (
+    <div className="min-h-screen bg-black text-white p-6 md:p-12">
+      <div className="max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
+          
+          {/* Left Side - Contact Info */}
+          <div className="space-y-12">
+            <div>
+              <h1 className="text-4xl md:text-5xl font-bold mb-8">Reach Out</h1>
+            </div>
+
+            <div className="space-y-8">
+              {/* Email */}
+              <div className="flex items-center space-x-6">
+                <div className="w-16 h-16 bg-slate-800 rounded-full flex items-center justify-center">
+                  <Mail className="w-6 h-6 text-slate-300" />
+                </div>
+                <div>
+                  <div className="text-slate-400 text-sm">Email</div>
+                  <div className="text-white text-lg">kartikturak1@gmail.com</div>
+                </div>
+              </div>  
+
+              {/* LinkedIn */}
+              <div className="flex items-center space-x-6">
+                <div className="w-16 h-16 bg-slate-800 rounded-full flex items-center justify-center">
+                  <Linkedin className="w-6 h-6 text-slate-300" />
+                </div>
+                <div>
+                  <div className="text-slate-400 text-sm">LinkedIn</div>
+                  <div className="text-white text-lg">Kartik Turak</div>
+                </div>
+              </div>
+
+              {/* GitHub */}
+              <div className="flex items-center space-x-6">
+                <div className="w-16 h-16 bg-slate-800 rounded-full flex items-center justify-center">
+                  <Github className="w-6 h-6 text-slate-300" />
+                </div>
+                <div>
+                  <div className="text-slate-400 text-sm">GitHub</div>
+                  <div className="text-white text-lg">kartikturak05</div>
+                </div>
+              </div>
+
+              {/* Twitter */}
+              <div className="flex items-center space-x-6">
+                <div className="w-16 h-16 bg-slate-800 rounded-full flex items-center justify-center">
+                  <Twitter className="w-6 h-6 text-slate-300" />
+                </div>
+                <div>
+                  <div className="text-slate-400 text-sm">Twitter</div>
+                  <div className="text-white text-lg">@KartikTurak05</div>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-16 space-y-2">
+              <div className="text-slate-400">Based in Nagpur, Maharashtra, India</div>
+              <div className="text-slate-400">Available for freelance opportunities and full-time positions.</div>
+              <div className="text-slate-400">Made with love by Kartik Turak.</div>
+            </div>
+          </div>
+
+          {/* Right Side - Contact Form */}
+          <div className="lg:pl-8">
+            <div className="space-y-6">
+              {/* Name and Email Row */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label className="block text-slate-400 text-sm mb-2">Your Name</label>
+                  <input
+                    type="text"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleInputChange}
+                    className="w-full bg-slate-800 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                    required
+                  />
+                </div>
+                <div>
+                  <label className="block text-slate-400 text-sm mb-2">Your Email</label>
+                  <input
+                    type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    className="w-full bg-slate-800 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                    required
+                  />
+                </div>
+              </div>
+
+              {/* Subject */}
+              <div>
+                <label className="block text-slate-400 text-sm mb-2">Subject</label>
+                <input
+                  type="text"
+                  name="subject"
+                  value={formData.subject}
+                  onChange={handleInputChange}
+                  className="w-full bg-slate-800 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                  required
+                />
+              </div>
+
+              {/* Message */}
+              <div>
+                <label className="block text-slate-400 text-sm mb-2">Your Message</label>
+                <textarea
+                  name="message"
+                  rows="6"
+                  value={formData.message}
+                  onChange={handleInputChange}
+                  className="w-full bg-slate-800 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all resize-none"
+                  required
+                ></textarea>
+              </div>
+
+              {/* Response Time */}
+              <div className="text-slate-400 text-sm">
+                I'll respond within 24-48 hours
+              </div>
+
+              {/* Submit Button */}
+              <button
+                onClick={handleSubmit}
+                className="bg-white text-black px-8 py-3 rounded-lg font-semibold flex items-center space-x-2 hover:bg-slate-200 transition-colors group"
+              >
+                <span>Send Message</span>
+                <Send className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Contact;

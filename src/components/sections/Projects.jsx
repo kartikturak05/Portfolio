@@ -126,7 +126,7 @@ const Projects = () => {
               Get In Touch
             </a>
             <a
-              href="https://github.com/yourusername"
+              href="https://github.com/kartikturak05"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-gray-800 hover:bg-gray-700 text-white px-8 py-3 rounded-lg transition-colors duration-200 font-medium border border-gray-600"
