@@ -25,10 +25,10 @@ function NavBar(){
 
             <div className="flex items-center  bg-opacity-90 backdrop-blur-sm border-b py-4 md:px-10 px-5 rounded-full  border-0 border-gray-100">
                 <ul className="flex md:space-x-8 space-x-4">
-                    <li className="text-gray-100  hover:text-blue-400 cursor-pointer md:text-2xl text-xl" onClick={() => handleNavigation('#home')}>Home</li>
-                    <li className="text-gray-100 hover:text-blue-400 cursor-pointer md:text-2xl text-xl" onClick={() => handleNavigation('#about')}>About</li>
-                    <li className="text-gray-100 hover:text-blue-400 cursor-pointer md:text-2xl text-xl" onClick={() => handleNavigation('#projects')}>Projects</li>
-                    <li className="text-gray-100 hover:text-blue-400 cursor-pointer md:text-2xl text-xl" onClick={() => handleNavigation('#contact')}>Contact</li>
+                    <li className="text-gray-100  hover:text-blue-400 cursor-pointer md:text-2xl text-lg" onClick={() => handleNavigation('#home')}>Home</li>
+                    <li className="text-gray-100 hover:text-blue-400 cursor-pointer md:text-2xl text-lg" onClick={() => handleNavigation('#about')}>About</li>
+                    <li className="text-gray-100 hover:text-blue-400 cursor-pointer md:text-2xl text-lg" onClick={() => handleNavigation('#projects')}>Projects</li>
+                    <li className="text-gray-100 hover:text-blue-400 cursor-pointer md:text-2xl text-lg" onClick={() => handleNavigation('#contact')}>Contact</li>
                 </ul>
             </div>
         </div>

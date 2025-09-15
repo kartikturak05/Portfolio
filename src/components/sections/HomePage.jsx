@@ -3,6 +3,7 @@ import Home from './Home';
 import About from './About';
 import Projects from './Projects';
 import Contact from './Contact';
+import Footer from './Footer';
 
 const HomePage = () => {
   return (
@@ -22,6 +23,10 @@ const HomePage = () => {
 
       <section id="contact">
         <Contact/>
+      </section>
+
+      <section id="footer">
+        <Footer/>
       </section>
     </div>
   );
