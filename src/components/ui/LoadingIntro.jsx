@@ -26,7 +26,7 @@ function LoadingIntro({ onComplete }) {
   return (
     <div className="fixed inset-0 z-50 bg-gradient-to-br from-black via-gray-900 to-black text-gray-100 flex flex-col items-center justify-center">
       {/* Typing Text */}
-      <div className="mb-6 text-5xl font-mono font-bold tracking-wider">
+      <div className="mb-6 text-2xl md:text-5xl font-mono font-bold tracking-wider">
         {text}
         <span className="animate-pulse ml-1 text-blue-500">|</span>
       </div>

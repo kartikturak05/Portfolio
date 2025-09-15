@@ -3,15 +3,24 @@ import React from 'react';
 const projectData = [
   {
     id: 1,
-    title: "Blogging Platform",
-    description: "A Medium-like blogging website where users can securely sign up, log in, and manage their accounts.Writers can create, edit, and publish blogs using a rich text editor.Readers can explore, search, and engage with posts in a responsive modern UI.",
+    title: "MeetBuzz",
+    description: "A smart scheduling platform where users can securely sign up, log in, and manage their accounts. Hosts can create custom event pages with available time slots; invitees can book meetings without double-booking. Integrated with Google Calendar and Google Meet for automatic calendar sync and meeting link generation, with a simple, responsive UI.",
+    skills: ["React","JavaScript", "Next.js", ,"PostgreSQL","Prisma", "Tailwind CSS"],
+    liveDemo: "https://meet-buzz.vercel.app/",
+    github: "hhttps://github.com/kartikturak05/MeetBuzz",
+    thumbnail: "MeetBuzz.png"
+  },
+  {
+    id: 2,
+    title: "Postify",
+    description: "Postify — A blogging web app where users can securely sign up, log in, and log out to manage their accounts. Writers can create, view, edit, delete, and bookmark blogs for future reference. The platform is built with a focus on simplicity and a fully responsive modern UI, ensuring a smooth and distraction-free writing and reading experience.",
     skills: ["React","TypeScript", "Node.js", "Hono",,"Cloudflare" ,"PostgreSQL","Prisma", "Tailwind CSS"],
     liveDemo: "https://medium-blog-bay.vercel.app/",
     github: "https://github.com/kartikturak05/Postify",
     thumbnail: "Postify.png"
   },
   {
-    id: 2,
+    id: 3,
     title: "Paytm Clone",
     description: "A Paytm-like digital wallet application where users can securely sign up, log in, and manage their wallet.Supports adding money from bank, transferring to friends, and peer-to-peer payments.Includes a transaction history dashboard to track all payments in real time.",
     skills: ["MongoDB", "Next.js", "Tailwind CSS", "Node.js"],
@@ -20,9 +29,9 @@ const projectData = [
     thumbnail: "Paytm.png"
   },
   {
-    id: 3,
+    id: 4,
     title: "Bookstore App",
-    description: "A full-stack bookstore app with add-to-cart, checkout, and admin management features.",
+    description: "A full-stack bookstore application where users can browse books, add them to the cart, and place orders through a secure checkout. It also includes an admin panel to manage books, orders, and inventory, with a responsive UI for a smooth shopping experience.",
     skills: ["React", "Express", "Node", "PostgreSQL", "MongoDB"],
     liveDemo: "https://bookstore.vercel.app",
     github: "https://github.com/kartikturak05/BookStore",
@@ -32,9 +41,9 @@ const projectData = [
 
 const ProjectCard = ({ project }) => {
   return (
-    <div className="bg-gray-900 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-800">
+    <div className="bg-gray-900 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-800 ">
       {/* Project Image */}
-      <div className="relative h-58 sm:h-74 bg-gray-800 overflow-hidden">
+      <div className="relative h-58 sm:h-74 bg-gray-800 overflow-hidden p-5">
         <img
           src={project.thumbnail}
           alt={project.title}
@@ -46,12 +55,12 @@ const ProjectCard = ({ project }) => {
       </div>
 
       {/* Project Content */}
-      <div className="p-8">
+      <div className="p-8 flex justify-around flex-col">
         <h3 className="text-4xl font-bold text-white mb-3 hover:text-blue-400 transition-colors duration-200">
           {project.title}
         </h3>
         
-        <p className="text-gray-300 mb-4 leading-relaxed text-xl">
+        <p className="text-gray-300 mb-4 leading-relaxed md:text-lg sm:text-md">
           {project.description}
         </p>
 
@@ -60,7 +69,7 @@ const ProjectCard = ({ project }) => {
           {project.skills.map((skill, index) => (
             <span
               key={index}
-              className="px-3 py-1 bg-transparent border-1 border-gray-100 bg-blue-700 text-blue-200 text-md rounded-xl hover:bg-blue-700 transition-colors duration-200"
+              className="px-3 py-1 bg-transparent border-1 border-gray-100  cursor-pointer text-blue-200 text-md rounded-xl hover:bg-blue-700 transition-colors duration-200"
             >
               {skill}
             </span>

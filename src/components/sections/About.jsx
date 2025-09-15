@@ -1,37 +1,24 @@
 import { div } from "framer-motion/client";
 import React from "react";
 import { FaReact, FaNodeJs, FaAws, FaDocker, FaGitAlt, FaHtml5, FaCss3Alt, FaPython, FaLinkedin, FaGithub as FaGithubProfile } from "react-icons/fa";
-import { SiJavascript, SiMongodb, SiMongoose, SiOracle, SiTailwindcss, SiBootstrap, SiExpress, SiNextdotjs, SiNodemon, SiFramer, SiGithub, SiGooglecloud, SiCplusplus, SiC, SiLeetcode, SiHackerrank, SiCodechef } from "react-icons/si";
-
-function GitHubContributions() {
-  return (
-    <div className="flex flex-col items-center px-4 sm:px-8 md:px-16 lg:px-18">
-      <div className="text-2xl sm:text-3xl font-bold mb-4 text-center text-white">My GitHub Contributions</div>
-      <div className="w-full flex justify-center my-6">
-        <img
-          className="w-full max-w-8xl rounded-lg "
-          src="https://ghchart.rshah.org/kartikturak05"
-          alt="Kartik's GitHub Contributions"
-        />
-      </div>
-    </div>
-  );
-}
-
+import { SiJavascript, SiMongodb, SiMongoose, SiOracle, SiTailwindcss, SiBootstrap, SiExpress, SiNextdotjs, SiNodemon, SiFramer, SiGithub, SiGooglecloud, SiCplusplus, SiC, SiLeetcode, SiHackerrank, SiCodechef, SiPython } from "react-icons/si";
 
 function TechnicalSkills() {
   return (
-    <div className="flex flex-col space-y-12 sm:space-y-15 text-white px-4 sm:px-8 md:px-16 lg:px-18 py-12">
+    <div className="flex flex-col space-y-12 sm:space-y-15 text-white">
+      <div className="text-2xl md:text-5xl font-bold mb-12 text-center">Technical Skills</div>
+
+
       
       {/* ---- Frontend Skills ---- */}
       <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between space-y-6 lg:space-y-0 lg:space-x-25">
-        <h2 className="text-3xl sm:text-4xl font-extrabold tracking-wide text-center lg:text-left lg:min-w-max mr-40 text-gray-400">
+        <h2 className="text-3xl sm:text-3xl font-extrabold tracking-wide text-center lg:text-left lg:min-w-max mr-40 text-gray-400">
           Frontend
         </h2>
         <div className="flex flex-wrap justify-center lg:justify-start gap-6 sm:gap-8 lg:gap-12">
           <div className="flex items-center space-x-3 sm:space-x-5 hover:scale-110 transition">
-            <SiJavascript className="text-yellow-400 text-4xl sm:text-4xl" />
-            <span className="text-lg sm:text-2xl">JavaScript</span>
+            <SiJavascript className="text-yellow-400 text-xl sm:text-3xl" />
+            <span className="text-lg sm:text-xl">JavaScript</span>
           </div>
           <div className="flex items-center space-x-3 sm:space-x-5 hover:scale-110 transition">
             <FaReact className="text-cyan-400 text-4xl sm:text-6xl" />
@@ -57,18 +44,7 @@ function TechnicalSkills() {
             <SiBootstrap className="text-purple-600 text-4xl sm:text-6xl" />
             <span className="text-lg sm:text-2xl">Bootstrap</span>
           </div>
-          <div className="flex items-center space-x-3 sm:space-x-5 hover:scale-110 transition">
-            <SiCplusplus className="text-blue-400 text-4xl sm:text-6xl" />
-            <span className="text-lg sm:text-2xl">C++</span>
-          </div>
-          <div className="flex items-center space-x-3 sm:space-x-5 hover:scale-110 transition">
-            <SiC className="text-blue-300 text-4xl sm:text-6xl" />
-            <span className="text-lg sm:text-2xl">C</span>
-          </div>
-          <div className="flex items-center space-x-3 sm:space-x-5 hover:scale-110 transition">
-            <FaPython className="text-yellow-300 text-4xl sm:text-6xl" />
-            <span className="text-lg sm:text-2xl">Python</span>
-          </div>
+          
         </div>
       </div>
 
@@ -153,8 +129,7 @@ function TechnicalSkills() {
 const About = () => {
   return (
     <div className="min-h-screen">
-      <div className="max-w-8xl mx-auto">
-        <GitHubContributions />
+      <div className="max-w-7xl mx-auto">
         <TechnicalSkills />
       </div>
     </div>

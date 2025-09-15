@@ -1,34 +1,58 @@
-import React, { useState } from 'react';
-import { Mail, Linkedin, Github, Twitter, Send } from 'lucide-react';
+import React, { useState } from "react";
+import { Mail, Linkedin, Github, Twitter, Send } from "lucide-react";
+import emailjs from "emailjs-com";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
   });
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      [name]: value
+      [name]: value,
     }));
   };
 
-  const handleSubmit = () => {
-    console.log('Form submitted:', formData);
-    // Here you would typically send the data to your backend
-    alert('Message sent successfully!');
-    setFormData({ name: '', email: '', subject: '', message: '' });
+  const handleSubmit = (e) => {
+  e.preventDefault();
+
+  const emailData = {
+    from_name: formData.name,
+    reply_to: formData.email,
+    subject: formData.subject,
+    message: formData.message,
   };
+
+  emailjs
+    .send(
+      import.meta.env.VITE_SERVICEID,
+      import.meta.env.VITE_TEMPLATEID,
+      emailData,
+      import.meta.env.VITE_PUBLICKEY
+    )
+    .then(
+      (result) => {
+        console.log("Email successfully sent!", result.text);
+        alert("Message sent successfully!");
+        setFormData({ name: "", email: "", subject: "", message: "" });
+      },
+      (error) => {
+        console.error("Failed to send email", error.text);
+        alert("Something went wrong, please try again.");
+      }
+    );
+};
+
 
   return (
     <div className=" bg-black text-white p-6 md:p-12">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
-          
           {/* Left Side - Contact Info */}
           <div className="space-y-12">
             <div>
@@ -43,9 +67,11 @@ const Contact = () => {
                 </div>
                 <div>
                   <div className="text-slate-400 text-sm">Email</div>
-                  <div className="text-white text-lg">kartikturak1@gmail.com</div>
+                  <div className="text-white text-lg">
+                    kartikturak1@gmail.com
+                  </div>
                 </div>
-              </div>  
+              </div>
 
               {/* LinkedIn */}
               <div className="flex items-center space-x-6">
@@ -82,8 +108,12 @@ const Contact = () => {
             </div>
 
             <div className="mt-16 space-y-2">
-              <div className="text-slate-400">Based in Nagpur, Maharashtra, India</div>
-              <div className="text-slate-400">Available for freelance opportunities and full-time positions.</div>
+              <div className="text-slate-400">
+                Based in Nagpur, Maharashtra, India
+              </div>
+              <div className="text-slate-400">
+                Available for freelance opportunities and full-time positions.
+              </div>
             </div>
           </div>
 
@@ -91,56 +121,66 @@ const Contact = () => {
           <div className="lg:pl-8">
             <div className="space-y-6">
               {/* Name and Email Row */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <form onSubmit={handleSubmit}>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <label className="block text-slate-400 text-sm mb-2">
+                      Your Name
+                    </label>
+                    <input
+                      type="text"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleInputChange}
+                      className="w-full bg-slate-800 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-slate-400 text-sm mb-2">
+                      Your Email
+                    </label>
+                    <input
+                      type="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleInputChange}
+                      className="w-full bg-slate-800 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                      required
+                    />
+                  </div>
+                </div>
+
+                {/* Subject */}
                 <div>
-                  <label className="block text-slate-400 text-sm mb-2">Your Name</label>
+                  <label className="block text-slate-400 text-sm mb-2">
+                    Subject
+                  </label>
                   <input
                     type="text"
-                    name="name"
-                    value={formData.name}
+                    name="subject"
+                    value={formData.subject}
                     onChange={handleInputChange}
                     className="w-full bg-slate-800 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
                     required
                   />
                 </div>
+
+                {/* Message */}
                 <div>
-                  <label className="block text-slate-400 text-sm mb-2">Your Email</label>
-                  <input
-                    type="email"
-                    name="email"
-                    value={formData.email}
+                  <label className="block text-slate-400 text-sm mb-2">
+                    Your Message
+                  </label>
+                  <textarea
+                    name="message"
+                    rows="6"
+                    value={formData.message}
                     onChange={handleInputChange}
-                    className="w-full bg-slate-800 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                    className="w-full bg-slate-800 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all resize-none"
                     required
-                  />
+                  ></textarea>
                 </div>
-              </div>
-
-              {/* Subject */}
-              <div>
-                <label className="block text-slate-400 text-sm mb-2">Subject</label>
-                <input
-                  type="text"
-                  name="subject"
-                  value={formData.subject}
-                  onChange={handleInputChange}
-                  className="w-full bg-slate-800 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
-                  required
-                />
-              </div>
-
-              {/* Message */}
-              <div>
-                <label className="block text-slate-400 text-sm mb-2">Your Message</label>
-                <textarea
-                  name="message"
-                  rows="6"
-                  value={formData.message}
-                  onChange={handleInputChange}
-                  className="w-full bg-slate-800 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all resize-none"
-                  required
-                ></textarea>
-              </div>
+              </form>
 
               {/* Response Time */}
               <div className="text-slate-400 text-sm">
@@ -157,7 +197,6 @@ const Contact = () => {
               </button>
             </div>
           </div>
-
         </div>
       </div>
     </div>
