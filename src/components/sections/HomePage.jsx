@@ -4,6 +4,7 @@ import About from './About';
 import Projects from './Projects';
 import Contact from './Contact';
 import Footer from './Footer';
+import Experience from './Experience';
 
 const HomePage = () => {
   return (
@@ -14,6 +15,10 @@ const HomePage = () => {
 
       <section id="about">
         <About/>
+      </section>
+
+      <section id="experience">
+        <Experience/>
       </section>
 
       <section id="projects">
