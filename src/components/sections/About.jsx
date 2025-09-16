@@ -1,12 +1,13 @@
 import { div } from "framer-motion/client";
 import React from "react";
+import { DiMysql } from "react-icons/di";
 import { FaReact, FaNodeJs, FaAws, FaDocker, FaGitAlt, FaHtml5, FaCss3Alt, FaPython, FaLinkedin, FaGithub as FaGithubProfile } from "react-icons/fa";
-import { SiJavascript, SiMongodb, SiMongoose, SiOracle, SiTailwindcss, SiBootstrap, SiExpress, SiNextdotjs, SiNodemon, SiFramer, SiGithub, SiGooglecloud, SiCplusplus, SiC, SiLeetcode, SiHackerrank, SiCodechef, SiPython } from "react-icons/si";
+import { SiJavascript, SiMongodb, SiMongoose, SiOracle, SiTailwindcss, SiBootstrap, SiExpress, SiNextdotjs, SiNodemon, SiFramer, SiGithub, SiGooglecloud, SiCplusplus, SiC, SiLeetcode, SiHackerrank, SiCodechef, SiPython, SiMysql, SiPostgresql, SiTypescript } from "react-icons/si";
 
 function TechnicalSkills() {
   return (
     <div className="flex flex-col space-y-12 sm:space-y-15 text-white">
-      <div className="text-2xl md:text-5xl font-bold mb-12 text-center">Technical Skills</div>
+      <div className="text-3xl md:text-5xl font-bold mb-12 text-center">Technical Skills</div>
 
 
       
@@ -41,8 +42,8 @@ function TechnicalSkills() {
             <span className="text-lg sm:text-2xl">Framer Motion</span>
           </div>
           <div className="flex items-center space-x-3 sm:space-x-5 hover:scale-110 transition">
-            <SiBootstrap className="text-purple-600 text-4xl sm:text-6xl" />
-            <span className="text-lg sm:text-2xl">Bootstrap</span>
+            <SiTypescript className="text-purple-600 text-4xl sm:text-6xl" />
+            <span className="text-lg sm:text-2xl">TypeScript</span>
           </div>
           
         </div>
@@ -84,12 +85,12 @@ function TechnicalSkills() {
             <span className="text-lg sm:text-2xl">MongoDB</span>
           </div>
           <div className="flex items-center space-x-3 sm:space-x-5 hover:scale-110 transition">
-            <SiMongoose className="text-red-500 text-4xl sm:text-6xl" />
-            <span className="text-lg sm:text-2xl">Mongoose</span>
+            <SiMysql className="text-red-500 text-4xl sm:text-6xl" />
+            <span className="text-lg sm:text-2xl">MySql</span>
           </div>
           <div className="flex items-center space-x-3 sm:space-x-5 hover:scale-110 transition">
-            <SiOracle className="text-red-600 text-4xl sm:text-6xl" />
-            <span className="text-lg sm:text-2xl">Oracle</span>
+            <SiPostgresql className="text-red-600 text-4xl sm:text-6xl" />
+          <span className="text-lg sm:text-2xl">postgreSQL</span>
           </div>
         </div>
       </div>

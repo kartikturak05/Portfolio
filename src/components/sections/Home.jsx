@@ -11,7 +11,10 @@ import {
   Palette,
   Zap,
   Code,
+  WheatIcon,
 } from "lucide-react";
+import { useNavigate } from 'react-router-dom';
+import { FaWhatsapp } from "react-icons/fa6";
 
 function Home() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -69,7 +72,7 @@ function Home() {
     },
     {
       name: "WhatsApp",
-      icon: MessageSquare,
+      icon: FaWhatsapp,
       color: "#25D366",
       url: "https://wa.me/+9359001131",
     },
@@ -96,6 +99,25 @@ function Home() {
     }, 3000);
     return () => clearInterval(interval);
   }, []);
+
+  const navigate = useNavigate();
+
+    const handleNavigation = (hash) => {
+    if (window.location.pathname === '/') {
+      const section = document.querySelector(hash);
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      navigate('/');
+      setTimeout(() => {
+        const section = document.querySelector(hash);
+        if (section) {
+          section.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 0);
+    }
+  };
 
   return (
     <div className="min-h-screen bg-black text-white overflow-hidden relative mb-10">
@@ -167,7 +189,7 @@ function Home() {
                 >
                   <div className="absolute inset-0 bg-gradient-to-r from-purple-400 to-pink-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/20 to-transparent" />
-                  <div className="relative flex items-center justify-center gap-2">
+                  <div className="relative flex items-center justify-center gap-2 cursor-pointer" onClick={() => handleNavigation('#contact')}>
                     <Mail size={20} />
                     Let's Connect
                   </div>
@@ -222,6 +244,7 @@ function Home() {
                         target="_blank"
                         rel="noopener noreferrer"
                         className="relative w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 flex items-center justify-center rounded-2xl backdrop-blur-sm border border-white/20 transition-all duration-300 hover:border-white/40 group"
+                        style={{ background: social.color }}
                       >
                         {/* Hover Tooltip */}
                         {hoveredIcon === index && (
@@ -232,13 +255,8 @@ function Home() {
                         )}
 
                         <social.icon
-                          size={20}
+                          size={25}
                           className="text-white group-hover:scale-110 transition-transform duration-300"
-                        />
-
-                        <div
-                          className="absolute inset-0 bg-gradient-to-r opacity-0 group-hover:opacity-20 rounded-2xl transition-opacity duration-300"
-                          style={{ background: social.color }}
                         />
                       </a>
                     </div>

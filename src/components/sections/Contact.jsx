@@ -18,6 +18,8 @@ const Contact = () => {
     }));
   };
 
+  
+
   const handleSubmit = (e) => {
   e.preventDefault();
 
@@ -67,17 +69,17 @@ const Contact = () => {
                 </div>
                 <div>
                   <div className="text-slate-400 text-sm">Email</div>
-                  <div className="text-white text-lg">
+                  <a className="text-white text-lg" href="mailto:kartikturak1@gmail.com">
                     kartikturak1@gmail.com
-                  </div>
+                  </a>
                 </div>
               </div>
 
               {/* LinkedIn */}
               <div className="flex items-center space-x-6">
-                <div className="w-16 h-16 bg-slate-800 rounded-full flex items-center justify-center">
+                <a className="w-16 h-16 bg-slate-800 rounded-full flex items-center justify-center" href="https://www.linkedin.com/in/kartik-turak/">
                   <Linkedin className="w-6 h-6 text-slate-300" />
-                </div>
+                </a>
                 <div>
                   <div className="text-slate-400 text-sm">LinkedIn</div>
                   <div className="text-white text-lg">Kartik Turak</div>
@@ -86,9 +88,9 @@ const Contact = () => {
 
               {/* GitHub */}
               <div className="flex items-center space-x-6">
-                <div className="w-16 h-16 bg-slate-800 rounded-full flex items-center justify-center">
+                <a className="w-16 h-16 bg-slate-800 rounded-full flex items-center justify-center" href="https://github.com/kartikturak05">
                   <Github className="w-6 h-6 text-slate-300" />
-                </div>
+                </a>
                 <div>
                   <div className="text-slate-400 text-sm">GitHub</div>
                   <div className="text-white text-lg">kartikturak05</div>
@@ -97,9 +99,9 @@ const Contact = () => {
 
               {/* Twitter */}
               <div className="flex items-center space-x-6">
-                <div className="w-16 h-16 bg-slate-800 rounded-full flex items-center justify-center">
+                <a className="w-16 h-16 bg-slate-800 rounded-full flex items-center justify-center" href="https://x.com/KartikTurak05">
                   <Twitter className="w-6 h-6 text-slate-300" />
-                </div>
+                </a>
                 <div>
                   <div className="text-slate-400 text-sm">Twitter</div>
                   <div className="text-white text-lg">@KartikTurak05</div>
