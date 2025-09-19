@@ -64,7 +64,7 @@ const Contact = () => {
             <div className="space-y-8">
               {/* Email */}
               <div className="flex items-center space-x-6">
-                <div className="w-16 h-16 bg-slate-800 rounded-full flex items-center justify-center">
+                <div className="w-16 h-16 bg-slate-800 rounded-full flex items-center justify-center hover:bg-blue-600">
                   <Mail className="w-6 h-6 text-slate-300" />
                 </div>
                 <div>
@@ -77,7 +77,7 @@ const Contact = () => {
 
               {/* LinkedIn */}
               <div className="flex items-center space-x-6">
-                <a className="w-16 h-16 bg-slate-800 rounded-full flex items-center justify-center" href="https://www.linkedin.com/in/kartik-turak/">
+                <a className="w-16 h-16 bg-slate-800 rounded-full flex items-center justify-center hover:bg-blue-600" href="https://www.linkedin.com/in/kartik-turak/">
                   <Linkedin className="w-6 h-6 text-slate-300" />
                 </a>
                 <div>
@@ -88,7 +88,7 @@ const Contact = () => {
 
               {/* GitHub */}
               <div className="flex items-center space-x-6">
-                <a className="w-16 h-16 bg-slate-800 rounded-full flex items-center justify-center" href="https://github.com/kartikturak05">
+                <a className="w-16 h-16 bg-slate-800 rounded-full flex items-center justify-center hover:bg-blue-600" href="https://github.com/kartikturak05">
                   <Github className="w-6 h-6 text-slate-300" />
                 </a>
                 <div>
@@ -99,7 +99,7 @@ const Contact = () => {
 
               {/* Twitter */}
               <div className="flex items-center space-x-6">
-                <a className="w-16 h-16 bg-slate-800 rounded-full flex items-center justify-center" href="https://x.com/KartikTurak05">
+                <a className="w-16 h-16 bg-slate-800 rounded-full flex items-center justify-center hover:bg-blue-600" href="https://x.com/KartikTurak05">
                   <Twitter className="w-6 h-6 text-slate-300" />
                 </a>
                 <div>

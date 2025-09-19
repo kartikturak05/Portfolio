@@ -9,18 +9,35 @@ function TechnicalSkills() {
     <div className="flex flex-col space-y-12 sm:space-y-15 text-white">
       <div className="text-3xl md:text-5xl font-bold mb-12 text-center">Technical Skills</div>
 
+      {/* Programming Languages */}
+      <div className="flex flex-col lg:flex-row lg:items-center space-y-6 lg:space-y-0 lg:space-x-25">
+        <h2 className="text-3xl sm:text-3xl font-extrabold tracking-wide text-center lg:text-left lg:min-w-max mr-40 text-gray-400">
+          Languages
+        </h2>
+        <div className="flex flex-wrap justify-center lg:justify-start gap-6 sm:gap-8 lg:gap-12">
+          <div className="flex items-center space-x-3 sm:space-x-5 hover:scale-110 transition">
+            <SiJavascript className="text-yellow-400 text-4xl sm:text-6xl " />
+            <span className="text-lg sm:text-xl">JavaScript</span>
+          </div>
+          <div className="flex items-center space-x-3 sm:space-x-5 hover:scale-110 transition">
+            <SiTypescript className="text-purple-600 text-4xl sm:text-6xl" />
+            <span className="text-lg sm:text-2xl">TypeScript</span>
+          </div>
 
+          <div className="flex items-center space-x-3 sm:space-x-5 hover:scale-110 transition">
+            <SiCplusplus className="text-purple-600 text-4xl sm:text-6xl" />
+            <span className="text-lg sm:text-2xl">C++</span>
+          </div>
+          
+        </div>
+      </div>
       
       {/* ---- Frontend Skills ---- */}
-      <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between space-y-6 lg:space-y-0 lg:space-x-25">
+      <div className="flex flex-col lg:flex-row lg:items-center space-y-6 lg:space-y-0 lg:space-x-25">
         <h2 className="text-3xl sm:text-3xl font-extrabold tracking-wide text-center lg:text-left lg:min-w-max mr-40 text-gray-400">
           Frontend
         </h2>
         <div className="flex flex-wrap justify-center lg:justify-start gap-6 sm:gap-8 lg:gap-12">
-          <div className="flex items-center space-x-3 sm:space-x-5 hover:scale-110 transition">
-            <SiJavascript className="text-yellow-400 text-xl sm:text-3xl" />
-            <span className="text-lg sm:text-xl">JavaScript</span>
-          </div>
           <div className="flex items-center space-x-3 sm:space-x-5 hover:scale-110 transition">
             <FaReact className="text-cyan-400 text-4xl sm:text-6xl" />
             <span className="text-lg sm:text-2xl">React</span>
@@ -41,11 +58,6 @@ function TechnicalSkills() {
             <SiFramer className="text-pink-400 text-4xl sm:text-6xl" />
             <span className="text-lg sm:text-2xl">Framer Motion</span>
           </div>
-          <div className="flex items-center space-x-3 sm:space-x-5 hover:scale-110 transition">
-            <SiTypescript className="text-purple-600 text-4xl sm:text-6xl" />
-            <span className="text-lg sm:text-2xl">TypeScript</span>
-          </div>
-          
         </div>
       </div>
 
