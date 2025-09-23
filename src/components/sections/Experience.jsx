@@ -6,7 +6,7 @@ const Experience = () => {
   return (
     <div>
       <div>
-        <div className="text-4xl md:text-6xl font-black mb-12 text-center text-white tracking-wider">
+        <div className="text-4xl md:text-6xl font-black mb-12 text-center text-white tracking-wider mt-10">
           Experience
         </div>
 
