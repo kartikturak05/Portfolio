@@ -24,7 +24,7 @@ const projectData = [
     title: "Paytm Clone",
     description: "A Paytm-like digital wallet application where users can securely sign up, log in, and manage their wallet.Supports adding money from bank, transferring to friends, and peer-to-peer payments.Includes a transaction history dashboard to track all payments in real time.",
     skills: ["MongoDB", "Next.js", "Tailwind CSS", "Node.js"],
-    liveDemo: "https://paytm-clone.vercel.app",
+    liveDemo: "",
     github: "https://github.com/kartikturak05/Paytm",
     thumbnail: "Paytm.png"
   },
@@ -33,7 +33,7 @@ const projectData = [
     title: "Bookstore App",
     description: "A full-stack bookstore application where users can browse books, add them to the cart, and place orders through a secure checkout. It also includes an admin panel to manage books, orders, and inventory, with a responsive UI for a smooth shopping experience.",
     skills: ["React", "Express", "Node", "PostgreSQL", "MongoDB"],
-    liveDemo: "https://bookstore.vercel.app",
+    liveDemo: "https://book-store-three-vert.vercel.app/",
     github: "https://github.com/kartikturak05/BookStore",
     thumbnail: "BooStore.png"
   }
@@ -78,14 +78,16 @@ const ProjectCard = ({ project }) => {
 
         {/* Buttons */}
         <div className="flex flex-col sm:flex-row gap-3">
-          <a
-            href={project.liveDemo}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex-1 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-center transition-colors duration-200 font-medium"
-          >
-            Live Demo
-          </a>
+          {project.liveDemo !== "" && (
+            <a
+              href={project.liveDemo}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-1 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-center transition-colors duration-200 font-medium"
+            >
+              Live Demo
+            </a>
+          )}
           <a
             href={project.github}
             target="_blank"
