@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Mail, Linkedin, Github, Twitter, Send } from "lucide-react";
 import emailjs from "emailjs-com";
+import toast from "react-hot-toast";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -23,6 +24,11 @@ const Contact = () => {
   const handleSubmit = (e) => {
   e.preventDefault();
 
+  if(!formData.name || !formData.email || !formData.subject || !formData.message) {
+    toast.error("Please fill in all fields.");
+    return;
+  }
+
   const emailData = {
     from_name: formData.name,
     reply_to: formData.email,
@@ -40,7 +46,7 @@ const Contact = () => {
     .then(
       (result) => {
         console.log("Email successfully sent!", result.text);
-        alert("Message sent successfully!");
+        toast.success("Message sent successfully!");
         setFormData({ name: "", email: "", subject: "", message: "" });
       },
       (error) => {
@@ -149,6 +155,7 @@ const Contact = () => {
                       onChange={handleInputChange}
                       className="w-full bg-slate-800 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
                       required
+                       pattern="^[a-zA-Z0-9._%+-]+@gmail\.com$"
                     />
                   </div>
                 </div>
@@ -182,21 +189,23 @@ const Contact = () => {
                     required
                   ></textarea>
                 </div>
-              </form>
 
-              {/* Response Time */}
-              <div className="text-slate-400 text-sm">
-                I'll respond within 24-48 hours
-              </div>
+              
 
               {/* Submit Button */}
               <button
-                onClick={handleSubmit}
-                className="bg-white text-black px-8 py-3 rounded-lg font-semibold flex items-center space-x-2 hover:bg-slate-200 transition-colors group"
+                type="submit"
+                className="bg-white text-black px-8 py-3 rounded-lg font-semibold flex items-center space-x-2 hover:bg-slate-200 transition-colors group mt-5"
               >
                 <span>Send Message</span>
                 <Send className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </button>
+              </form>
+                {/* Response Time */}
+              <div className="text-slate-400 text-sm  mt-2">
+                I'll respond within 24-48 hours
+              </div>
+              
             </div>
           </div>
         </div>
