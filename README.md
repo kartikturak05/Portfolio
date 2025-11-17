@@ -77,16 +77,8 @@ Twitter
 Includes a working message form UI.
 
 📂 Folder Structure
-root/
-├── public/
-├── src/
-│   ├── components/
-│   ├── pages/
-│   ├── assets/
-│   ├── App.jsx
-│   └── index.js
-├── package.json
-└── tailwind.config.js
+<img width="457" height="333" alt="image" src="https://github.com/user-attachments/assets/f4fccec4-7616-4605-8c7a-2c72dcce72f2" />
+
 
 🛠️ Installation & Setup
 
